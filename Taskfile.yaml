@@ -1,0 +1,29 @@
+version: "3"
+
+
+dotenv: ["./environment/.prod.env"]
+
+
+vars:
+    THUNDERSTORE_PATH: ./managers/Thunderstore
+
+
+tasks:
+    thunderstore:update:
+        vars:
+            ICON_PATH: ./assets/icon.png
+            MANIFEST_PATH: ./manifest.json
+            CHANGELOG_PATH: ./CHANGELOG.md
+            README_PATH: ./README.md
+            DLL_FILE: ./bin/Debug/TeamUpgrades.dll
+            SAVE_TO: "{{ .THUNDERSTORE_PATH }}/bundle.zip"
+        cmds:
+            - |
+              zip                     \
+                -j {{ .SAVE_TO }}     \
+                {{ .ICON_PATH      }} \
+                {{ .MANIFEST_PATH  }} \
+                {{ .CHANGELOG_PATH }} \
+                {{ .DLL_FILE       }} \
+                {{ .README_PATH    }}
+
