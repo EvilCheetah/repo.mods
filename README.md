@@ -2,4 +2,7 @@
 All upgrades now work for the whole team!
 
 ## Feedback and Suggestions
-Feel free to open an issue on the GitHub repository if you have any feedback or suggestions.
+If you have any feedback or suggestions, feel free to open an issue on the [GitHub repository](https://github.com/EvilCheetah/repo.mods).
+
+## Say Thanks
+If you'd like to show your appreciation, you can give me a profile award on my [Steam Page](https://steamcommunity.com/id/EvilCheetah/).

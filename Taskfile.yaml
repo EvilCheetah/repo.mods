@@ -1,13 +1,6 @@
 version: "3"
 
 
-dotenv: ["./environment/.prod.env"]
-
-
-vars:
-    THUNDERSTORE_PATH: ./managers/Thunderstore
-
-
 tasks:
     thunderstore:update:
         vars:
@@ -16,7 +9,7 @@ tasks:
             CHANGELOG_PATH: ./CHANGELOG.md
             README_PATH: ./README.md
             DLL_FILE: ./bin/Debug/TeamUpgrades.dll
-            SAVE_TO: "{{ .THUNDERSTORE_PATH }}/bundle.zip"
+            SAVE_TO: "./bundles/bundle.zip"
         cmds:
             - |
               zip                     \
