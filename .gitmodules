@@ -2,3 +2,7 @@
 	path   = packages/team-upgrades
 	url    = https://github.com/EvilCheetah/repo.mods.git
 	branch = mods.team-upgrades
+[submodule "packages/scaling-prices"]
+	path   = packages/scaling-prices
+	url    = https://github.com/EvilCheetah/repo.mods.git
+	branch = mods.scaling-prices
