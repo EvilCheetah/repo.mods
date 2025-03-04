@@ -8,7 +8,7 @@ This repo holds multiple projects, each in its own branch. Below is an overview:
 |--------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `master` (this branch)     | Project Entrypoint                                                                       | [View on GitHub](https://github.com/EvilCheetah/repo.mods)                          |
 | `mods.team-upgrades`       | [TeamUpgrades](https://thunderstore.io/c/repo/p/EvilCheetah/TeamUpgrades/) Mod Project   | [View on GitHub](https://github.com/EvilCheetah/repo.mods/tree/mods.team-upgrades)  |
-| `mods.scaling-prices`      | [TeamUpgrades](https://thunderstore.io/c/repo/p/EvilCheetah/ScalingPrices/) Mod Project  | [View on GitHub](https://github.com/EvilCheetah/repo.mods/tree/mods.scaling-prices) |
+| `mods.scaling-prices`      | [ScalingPrices](https://thunderstore.io/c/repo/p/EvilCheetah/ScalingPrices/) Mod Project | [View on GitHub](https://github.com/EvilCheetah/repo.mods/tree/mods.scaling-prices) |
 
 
 ## Feedback and Suggestions
