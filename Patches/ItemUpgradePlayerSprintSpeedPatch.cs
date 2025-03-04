@@ -5,7 +5,7 @@ namespace REPOTeamBoosters.Patches
     [HarmonyPatch(typeof(ItemUpgradePlayerSprintSpeed), nameof(ItemUpgradePlayerSprintSpeed.Upgrade))]
     internal class ItemUpgradePlayerSprintSpeedPatch
     {
-        static bool Prefix(ItemUpgradePlayerHealth __instance)
+        static bool Prefix(ItemUpgradePlayerSprintSpeed __instance)
         {
             var players = SemiFunc.PlayerGetAll();
 

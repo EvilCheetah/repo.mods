@@ -2,7 +2,11 @@
 using BepInEx.Logging;
 using HarmonyLib;
 using REPOTeamBoosters.Patches;
+using TeamUpgrades.Configuration;
 using TeamUpgrades.Patches;
+
+
+using PatchInfo = System.ValueTuple<BepInEx.Configuration.ConfigEntry<bool>, System.Action, string>;
 
 
 namespace REPOTeamBoosters
@@ -29,18 +33,69 @@ namespace REPOTeamBoosters
 
             mls = BepInEx.Logging.Logger.CreateLogSource(mod_guid);
 
-            mls.LogInfo("Team Boosters mod has been activated");
-
             harmony.PatchAll(typeof(TeamBoostersBase));
-            harmony.PatchAll(typeof(ItemUpgradeMapPlayerCountPatch));
-            harmony.PatchAll(typeof(ItemUpgradePlayerEnergyPatch));
-            harmony.PatchAll(typeof(ItemUpgradePlayerExtraJumpPatch));
-            harmony.PatchAll(typeof(ItemUpgradePlayerGrabRangePatch));
-            harmony.PatchAll(typeof(ItemUpgradePlayerGrabStrengthPatch));
-            harmony.PatchAll(typeof(ItemUpgradePlayerGrabThrowPatch));
-            harmony.PatchAll(typeof(ItemUpgradePlayerHealthPatch));
-            harmony.PatchAll(typeof(ItemUpgradePlayerSprintSpeedPatch));
-            harmony.PatchAll(typeof(ItemUpgradePlayerTumbleLaunchPatch));
+            
+            Configuration.Init(Config);
+
+            var patches = new PatchInfo[]
+            {
+                (
+                Configuration.EnableItemUpgradeMapPlayerCountPatch,
+                    () => harmony.PatchAll(typeof(ItemUpgradeMapPlayerCountPatch)),
+                    "Map Player Count Upgrade"
+                ),
+                (
+                Configuration.EnableItemUpgradePlayerEnergyPatch,
+                    () => harmony.PatchAll(typeof(ItemUpgradePlayerEnergyPatch)),
+                    "Player Energy Upgrade"
+                ),
+                (
+                Configuration.EnableItemUpgradePlayerExtraJumpPatch,
+                    () => harmony.PatchAll(typeof(ItemUpgradePlayerExtraJumpPatch)),
+                    "Player Extra Jump Upgrade"
+                ),
+                (
+                Configuration.EnableItemUpgradePlayerGrabRangePatch,
+                    () => harmony.PatchAll(typeof(ItemUpgradePlayerGrabRangePatch)),
+                    "Player Grab Range Upgrade"
+                ),
+                (
+                Configuration.EnableItemUpgradePlayerGrabStrengthPatch,
+                    () => harmony.PatchAll(typeof(ItemUpgradePlayerGrabStrengthPatch)),
+                    "Player Grab Strength Upgrade"
+                ),
+                (
+                Configuration.EnableItemUpgradePlayerGrabThrowPatch,
+                    () => harmony.PatchAll(typeof(ItemUpgradePlayerGrabThrowPatch)),
+                    "Player Grab Throw Upgrade"
+                ),
+                (
+                Configuration.EnableItemUpgradePlayerHealthPatch,
+                    () => harmony.PatchAll(typeof(ItemUpgradePlayerHealthPatch)),
+                    "Player Health Upgrade"
+                ),
+                (
+                    Configuration.EnableItemUpgradePlayerSprintSpeedPatch,
+                    () => harmony.PatchAll(typeof(ItemUpgradePlayerSprintSpeedPatch)),
+                    "Player Sprint Speed Upgrade"
+                ),
+                (
+                    Configuration.EnableItemUpgradePlayerTumbleLaunchPatch,
+                    () => harmony.PatchAll(typeof(ItemUpgradePlayerTumbleLaunchPatch)),
+                    "Player Thumle Lauch Upgrade"
+                ),
+            };
+
+            foreach (var (is_patch_enabled, apply_patch, patch_name) in patches)
+            {
+                if (is_patch_enabled.Value)
+                {
+                    apply_patch();
+                    mls.LogInfo($"{patch_name} patch is applied");
+                }
+            }
+
+            mls.LogInfo("Team Boosters mod has been activated");
         }
     }
 }
