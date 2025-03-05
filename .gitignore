@@ -3,3 +3,5 @@ obj/
 bin/
 managers/
 bundles/
+
+manifest.json

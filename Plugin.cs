@@ -14,10 +14,10 @@ namespace REPOTeamBoosters
     [BepInPlugin(mod_guid, mod_name, mod_version)]
     public class TeamBoostersBase : BaseUnityPlugin
     {
-        private const string mod_guid = "EvilCheetah.REPO.TeamBoosters";
-        private const string mod_name = "Team Boosters";
-        private const string mod_version = "1.0.0";
-
+        private const string mod_guid    = "EvilCheetah.REPO.TeamBoosters";
+        private const string mod_name    = "Team Boosters";
+        private const string mod_version = "1.1.4";
+        
         private readonly Harmony harmony = new Harmony(mod_guid);
 
         private static TeamBoostersBase instance;
