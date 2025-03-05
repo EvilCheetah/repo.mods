@@ -10,8 +10,8 @@ namespace ScalingPrices
     public class PlayerCountPricingBase : BaseUnityPlugin
     {
         private const string mod_guid    = "EvilCheetah.REPO.PlayerCountPricing";
-        private const string mod_name    = "R.E.P.O. Player Count Pricing";
-        private const string mod_version = "1.0.0";
+        private const string mod_name    = "Scaling Prices";
+        private const string mod_version = "1.0.2";
 
         private readonly Harmony harmony = new Harmony(mod_guid);
 
