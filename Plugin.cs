@@ -15,7 +15,7 @@ namespace REPOTeamBoosters
     public class TeamBoostersBase : BaseUnityPlugin
     {
         private const string mod_guid = "EvilCheetah.REPO.TeamBoosters";
-        private const string mod_name = "R.E.P.O. Team Boosters";
+        private const string mod_name = "Team Boosters";
         private const string mod_version = "1.0.0";
 
         private readonly Harmony harmony = new Harmony(mod_guid);
