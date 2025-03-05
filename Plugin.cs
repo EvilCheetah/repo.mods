@@ -11,7 +11,7 @@ namespace ScalingPrices
     {
         private const string mod_guid    = "EvilCheetah.REPO.PlayerCountPricing";
         private const string mod_name    = "Scaling Prices";
-        private const string mod_version = "1.0.2";
+        private const string mod_version = "1.0.3";
 
         private readonly Harmony harmony = new Harmony(mod_guid);
 

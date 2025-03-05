@@ -1,8 +1,30 @@
 version: "3"
 
 
+dotenv:
+    - ./environment/.version.env
+
+
 tasks:
+    manifest:update:
+        cmds:
+            - |
+              jq                                                      \
+                    --indent 4                                        \
+                    --arg v "{{ .MOD_VERSION }}"                      \
+                    '.version_number = $v'                            \
+                    ./assets/manifest.template.json > ./manifest.json
+
+    build:
+        cmds:
+            - echo $MOD_VERSION
+            - |
+              dotnet build                                               \
+                    --configuration Release                              \
+                    /p:MOD_version="\"{{.MOD_VERSION}}\""
+    
     build:thunderstore:
+        deps: [manifest:update, build]
         vars:
             ICON_PATH: ./assets/icon.png
             MANIFEST_PATH: ./manifest.json
