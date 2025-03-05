@@ -6,3 +6,7 @@
 	path   = packages/scaling-prices
 	url    = https://github.com/EvilCheetah/repo.mods.git
 	branch = mods.scaling-prices
+[submodule "packages/team-heals"]
+	path   = packages/team-heals
+	url    = https://github.com/EvilCheetah/repo.mods.git
+	branch = mods.team-heals
