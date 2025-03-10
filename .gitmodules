@@ -10,3 +10,7 @@
 	path   = packages/team-heals
 	url    = https://github.com/EvilCheetah/repo.mods.git
 	branch = mods.team-heals
+[submodule "packages/kurwa-hunter"]
+	path = packages/kurwa-hunter
+	url = https://github.com/EvilCheetah/repo.mods.git
+	branch = mods.kurwa-hunter
