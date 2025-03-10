@@ -63,9 +63,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Helpers\ItemAttributesHelper.cs" />
+    <Compile Include="Helpers\ShopManagerHelper.cs" />
+    <Compile Include="Patches\ItemAttributesPatch.cs" />
     <Compile Include="Patches\ShopManagerPatch.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

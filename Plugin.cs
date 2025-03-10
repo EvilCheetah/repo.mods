@@ -7,15 +7,15 @@ using ScalingPrices.Patches;
 namespace ScalingPrices
 {
     [BepInPlugin(mod_guid, mod_name, mod_version)]
-    public class PlayerCountPricingBase : BaseUnityPlugin
+    public class ScalingPricingBase : BaseUnityPlugin
     {
         private const string mod_guid    = "EvilCheetah.REPO.PlayerCountPricing";
         private const string mod_name    = "Scaling Prices";
-        private const string mod_version = "1.0.3";
+        private const string mod_version = "1.1.0";
 
         private readonly Harmony harmony = new Harmony(mod_guid);
 
-        private static PlayerCountPricingBase instance;
+        private static ScalingPricingBase instance;
 
         internal ManualLogSource mls;
 
@@ -31,7 +31,9 @@ namespace ScalingPrices
 
             mls.LogInfo("Player Count Pricing mod has been activated");
 
+            harmony.PatchAll(typeof(ScalingPricingBase));
             harmony.PatchAll(typeof(ShopManagerPatch));
+            harmony.PatchAll(typeof(ItemAttributesPatch));
         }
     }
 }

@@ -4,59 +4,65 @@ namespace ScalingPrices.Config
 {
     internal class Configuration
     {
-        public static ConfigEntry<float> UpgradeBasePriceMultiplier;
-        public static ConfigEntry<float> UpgradeAdditionalCostPerPlayer;
+        public static ConfigEntry<float> ItemValueMultiplier;
+        public static ConfigEntry<float> UpgradeIncrease;
+        public static ConfigEntry<float> HealthPackIncrease;
+        public static ConfigEntry<float> CrystalIncrease;
 
-        public static ConfigEntry<float> HealthPackBasePriceMultiplier;
-        public static ConfigEntry<float> HealthPackAdditionalCostPerPlayer;
-
-        public static ConfigEntry<float> CrystalBasePriceMultiplier;
-        public static ConfigEntry<float> CrystalAdditionalCostPerPlayer;
+        public static ConfigEntry<float> UpgradeIncreasePerPlayer;
+        public static ConfigEntry<float> HealthPackIncreasePerPlayer;
+        public static ConfigEntry<float> CrystalIncreasePerPlayer;
 
         public static void Init(ConfigFile config)
         {
-            UpgradeBasePriceMultiplier = config.Bind<float>(
-                "ItemType.Upgrade",
-                "PriceMultiplier",
+            ItemValueMultiplier = config.Bind<float>(
+                "Default",
+                "ValueMultiplier",
+                4f,
+                "Multiplier applied to the base price of items"
+            );
+
+            UpgradeIncrease = config.Bind<float>(
+                "Default",
+                "UpgradeIncrease",
                 0.5f,
                 "Multiplier applied to the base price of items"
             );
 
-            UpgradeAdditionalCostPerPlayer = config.Bind<float>(
-                "ItemType.Upgrade",
-                "AdditionalCostPerPlayer",
-                0f,
-                "Fixed fee added per player to linearly increase the overall item price"
-            );
-
-
-            HealthPackBasePriceMultiplier = config.Bind<float>(
-                "ItemType.HealthPack",
-                "PriceMultiplier",
+            HealthPackIncrease = config.Bind<float>(
+                "Default",
+                "HealthPackIncrease",
                 0.05f,
                 "Multiplier applied to the base price of items"
             );
 
-            HealthPackAdditionalCostPerPlayer = config.Bind<float>(
-                "ItemType.HealthPack",
-                "AdditionalCostPerPlayer",
-                0f,
-                "Fixed fee added per player to linearly increase the overall item price"
-            );
-
-
-            CrystalBasePriceMultiplier = config.Bind<float>(
-                "ItemType.Crystal",
-                "PriceMultiplier",
+            CrystalIncrease = config.Bind<float>(
+                "Default",
+                "CrystalIncrease",
                 0.2f,
                 "Multiplier applied to the base price of items"
             );
 
-            CrystalAdditionalCostPerPlayer = config.Bind<float>(
-                "ItemType.Crystal",
-                "AdditionalCostPerPlayer",
+
+            UpgradeIncreasePerPlayer = config.Bind<float>(
+                "PerPlayerIncrease",
+                "UpgradeIncrease",
                 0f,
-                "Fixed fee added per player to linearly increase the overall item price"
+                "Multiplier applied to the base price of items"
+            );
+
+            HealthPackIncreasePerPlayer = config.Bind<float>(
+                "PerPlayerIncrease",
+                "HealthPackIncrease",
+                0f,
+                "Multiplier applied to the base price of items"
+            );
+
+            CrystalIncreasePerPlayer = config.Bind<float>(
+                "PerPlayerIncrease",
+                "CrystalIncrease",
+                0f,
+                "Multiplier applied to the base price of items"
             );
         }
     }
