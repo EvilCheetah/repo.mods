@@ -1,0 +1,38 @@
+version: "3"
+
+
+dotenv:
+    - ./environment/.version.env
+
+
+tasks:
+    manifest:update:
+        cmds:
+            - |
+              jq                                                      \
+                    --indent 4                                        \
+                    --arg v "{{ .MOD_VERSION }}"                      \
+                    '.version_number = $v'                            \
+                    ./assets/manifest.template.json > ./manifest.json
+
+    build:thunderstore:
+        deps: [manifest:update]
+        vars:
+            ICON_PATH: ./assets/icon.png
+            MANIFEST_PATH: ./manifest.json
+            CHANGELOG_PATH: ./CHANGELOG.md
+            README_PATH: ./README.md
+            SOUNDS_PATH: ./sounds
+            REPLACERS_PATH: ./replacers
+            SOUND_PACK_PATH: ./sound_pack.json
+            SAVE_TO: "./bundles/bundle.zip"
+        cmds:
+            - |
+              zip                     \
+                -j {{ .SAVE_TO }}     \
+                {{ .ICON_PATH      }} \
+                {{ .MANIFEST_PATH  }} \
+                {{ .CHANGELOG_PATH }} \
+                {{ .DLL_FILE       }} \
+                {{ .README_PATH    }}
+

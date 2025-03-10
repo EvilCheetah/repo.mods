@@ -1,0 +1,9 @@
+{
+	"name": "KurwaHunter",
+    "config": {
+        "Settings:Hunter_Aim": {
+            "description": "Enable sound replacement for Enemy Hunter Aim Sounds",
+            "default": true
+        }
+    }
+}

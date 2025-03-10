@@ -1,0 +1,10 @@
+{
+    "name": "KurwaHunter",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/EvilCheetah/repo.mods",
+    "description": "An old veteran has now learned to speak Polish",
+    "dependencies": [
+        "BepInEx-BepInExPack-5.4.2100",
+        "loaforc-loaforcsSoundAPI-2.0.5"
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "replacements": [
+        {
+            "matches": "*:enemy hunter aim start global01",
+			"condition": {
+                "type": "config",
+                "config": "Settings:Hunter_Aim",
+                "value": true
+			},
+            "sounds": [
+                {
+                    "sound": "o-kurwa-global-01.ogg",
+					"weight": 5
+                }
+            ]
+        },
+        {
+            "matches": "*:enemy hunter aim start global02",
+			"condition": {
+                "type": "config",
+                "config": "Settings:Hunter_Aim",
+                "value": true
+			},
+            "sounds": [
+                {
+                    "sound": "o-kurwa-global-02.ogg",
+					"weight": 5
+                }
+            ]
+        },
+        {
+            "matches": "*:enemy hunter aim start global03",
+			"condition": {
+                "type": "config",
+                "config": "Settings:Hunter_Aim",
+                "value": true
+			},
+            "sounds": [
+                {
+                    "sound": "o-kurwa-global-03.ogg",
+					"weight": 5
+                }
+            ]
+        },
+        {
+            "matches": "*:enemy hunter aim start01",
+			"condition": {
+                "type": "config",
+                "config": "Settings:Hunter_Aim",
+                "value": true
+			},
+            "sounds": [
+                {
+                    "sound": "o-kurwa-01.ogg",
+					"weight": 5
+                }
+            ]
+        },
+        {
+            "matches": "*:enemy hunter aim start02",
+			"condition": {
+                "type": "config",
+                "config": "Settings:Hunter_Aim",
+                "value": true
+			},
+            "sounds": [
+                {
+                    "sound": "o-kurwa-02.ogg",
+					"weight": 5
+                }
+            ]
+        },
+        {
+            "matches": "*:enemy hunter aim start03",
+			"condition": {
+                "type": "config",
+                "config": "Settings:Hunter_Aim",
+                "value": true
+			},
+            "sounds": [
+                {
+                    "sound": "o-kurwa-03.ogg",
+					"weight": 5
+                }
+            ]
+        }
+    ]
+}
