@@ -1,6 +1,9 @@
 # Description
 An old veteran has now learned to speak Polish
 
+# Credit
+[O, kurwa, ja pierdolę](https://www.youtube.com/watch?v=7Anq5wkEG4U)
+
 ## Feedback and Suggestions
 If you have any feedback or suggestions, feel free to open an issue on the [GitHub repository](https://github.com/EvilCheetah/repo.mods).
 
